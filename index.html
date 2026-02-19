@@ -452,6 +452,41 @@
             .stats-row { grid-template-columns: 1fr; }
         }
 
+        /* Metrics */
+        .metrics-block { margin-top: 2rem; }
+        .metrics-heading {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brand);
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 0.75rem;
+        }
+        .metric-item {
+            padding: 1.1rem 1.25rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--dark-border);
+            border-radius: 10px;
+        }
+        .metric-name {
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--text-light);
+            margin-bottom: 0.3rem;
+        }
+        .metric-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted-light);
+            line-height: 1.5;
+        }
+
         /* ============================
            APPROACH PILLARS
            ============================ */
@@ -905,6 +940,32 @@
 
             <div class="flow-callout reveal" style="background: rgba(255,255,255,0.05); border-left-color: rgba(236, 78, 54, 0.6); color: var(--text-light);">
                 There's an important reason we're careful about AI search "rankings": <a href="https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/" target="_blank" style="color: var(--brand); text-decoration: none; border-bottom: 1px solid rgba(236, 78, 54, 0.4);">SparkToro research</a> across 2,961 AI responses found that ChatGPT and Google return different recommendation lists more than 99% of the time&mdash;even for identical queries. That's why we focus on the thing you can reliably measure and control: your search engine rankings, which feed AI visibility automatically.
+            </div>
+
+            <div class="metrics-block reveal">
+                <div class="metrics-heading">What we track instead</div>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-name">Impressions Growth</div>
+                        <div class="metric-desc">Your content's footprint in search&mdash;the foundation AI systems draw from.</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Branded Search Volume</div>
+                        <div class="metric-desc">When AI mentions your brand, people Google you. We track that lift.</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Direct Traffic</div>
+                        <div class="metric-desc">People who encounter your brand in AI answers and navigate straight to your site.</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">AI Referral Traffic</div>
+                        <div class="metric-desc">Visits directly from ChatGPT, Perplexity, and other AI platforms.</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-name">Question-Based Queries</div>
+                        <div class="metric-desc">Performance on the exact queries that trigger AI Overviews.</div>
+                    </div>
+                </div>
             </div>
 
             <div class="quote-block reveal">
