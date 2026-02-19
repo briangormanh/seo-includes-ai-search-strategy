@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your SEO Package Includes AI Search | Sixth City Marketing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        /* ============================
+           RESET & BASE
+           ============================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--light);
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+
+        /* ============================
+           VARIABLES
+           ============================ */
+        :root {
+            --brand: #EC4E36;
+            --brand-15: rgba(236, 78, 54, 0.15);
+            --brand-10: rgba(236, 78, 54, 0.10);
+            --brand-06: rgba(236, 78, 54, 0.06);
+            --dark: #12151C;
+            --dark-card: #1A1E28;
+            --dark-border: #2A2E3A;
+            --light: #FAF9F7;
+            --light-card: #F0EDE8;
+            --white: #FFFFFF;
+            --text-primary: #12151C;
+            --text-secondary: #5A6070;
+            --text-light: #E8E6E1;
+            --text-muted-light: #7A8194;
+            --border-light: #DDD9D2;
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'DM Sans', system-ui, sans-serif;
+        }
+
+        /* ============================
+           TYPOGRAPHY
+           ============================ */
+        .section-label {
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brand);
+            margin-bottom: 1rem;
+        }
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4.5vw, 3.25rem);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            line-height: 1.65;
+            max-width: 640px;
+        }
+        .dark-section .section-subtitle { color: var(--text-muted-light); }
+        .light-section .section-subtitle { color: var(--text-secondary); }
+
+        /* ============================
+           LAYOUT
+           ============================ */
+        .section { padding: 6rem 0; }
+        .container { max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
+        .dark-section { background: var(--dark); color: var(--text-light); }
+        .light-section { background: var(--light); color: var(--text-primary); }
+
+        /* ============================
+           NAV
+           ============================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0 2rem;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(18, 21, 28, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .nav-logo {
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* ============================
+           HERO
+           ============================ */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+            padding-bottom: 60px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 15% 85%, rgba(236, 78, 54, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 15%, rgba(236, 78, 54, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--brand-15);
+            border: 1px solid rgba(236, 78, 54, 0.25);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brand);
+            letter-spacing: 0.04em;
+            margin-bottom: 2rem;
+        }
+        .hero-title {
+            font-family: var(--serif);
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            color: var(--white);
+            max-width: 800px;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: var(--brand);
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            line-height: 1.65;
+            color: var(--text-muted-light);
+            max-width: 620px;
+        }
+
+        /* ============================
+           FLOW DIAGRAM
+           ============================ */
+        .flow-section { padding-bottom: 5rem; }
+        .flow-grid {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .flow-row {
+            display: grid;
+            grid-template-columns: minmax(140px, auto) 24px 1fr 24px 1fr 24px minmax(120px, auto);
+            align-items: center;
+            gap: 0;
+        }
+        .flow-node {
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .flow-platform {
+            background: var(--light-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+        }
+        .flow-api {
+            background: var(--brand-10);
+            border: 1px solid rgba(236, 78, 54, 0.25);
+            color: var(--brand);
+            font-weight: 700;
+        }
+        .flow-index {
+            background: var(--brand-15);
+            border: 1px solid rgba(236, 78, 54, 0.3);
+            color: var(--brand);
+            font-weight: 700;
+        }
+        .flow-answer {
+            background: var(--light-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+        }
+        .flow-arrow {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            opacity: 0.5;
+        }
+        .flow-callout {
+            margin-top: 3rem;
+            padding: 1.75rem 2rem;
+            background: var(--brand-06);
+            border-left: 3px solid var(--brand);
+            border-radius: 0 8px 8px 0;
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+        @media (max-width: 900px) {
+            .flow-row {
+                grid-template-columns: 1fr;
+                gap: 0.35rem;
+                padding: 1.25rem;
+                background: var(--light-card);
+                border-radius: 12px;
+                border: 1px solid var(--border-light);
+            }
+            .flow-node { border: none; background: none; padding: 0.5rem; }
+            .flow-platform { background: var(--white); border: 1px solid var(--border-light); border-radius: 8px; }
+            .flow-arrow { transform: rotate(90deg); font-size: 0.9rem; }
+        }
+
+        /* ============================
+           STATS
+           ============================ */
+        .stats-row {
+            margin-top: 3.5rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .stat-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+        }
+        .stat-number {
+            font-family: var(--serif);
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            color: var(--brand);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            line-height: 1.55;
+            color: var(--text-light);
+        }
+        @media (max-width: 768px) {
+            .stats-row { grid-template-columns: 1fr; }
+        }
+
+        /* ============================
+           APPROACH PILLARS
+           ============================ */
+        .pillars-section {
+            margin-top: 3.5rem;
+        }
+        .pillars-group-label {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--brand);
+            opacity: 0.7;
+            margin-bottom: 1rem;
+            padding-left: 0.25rem;
+        }
+        .pillars-group-label:not(:first-child) {
+            margin-top: 2.5rem;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .pillar-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--light-card);
+            border: 1px solid var(--border-light);
+            transition: border-color 0.3s;
+        }
+        .pillar-card:hover { border-color: rgba(236, 78, 54, 0.3); }
+        .pillar-num {
+            font-family: var(--serif);
+            font-size: 1.75rem;
+            color: var(--brand);
+            opacity: 0.6;
+            margin-bottom: 0.75rem;
+        }
+        .pillar-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .pillar-accent {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            color: var(--brand);
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+        .pillar-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        @media (max-width: 768px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================
+           CASE STUDY
+           ============================ */
+        .case-hero-stats {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .case-stat {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--dark-card);
+            border-radius: 12px;
+            border: 1px solid var(--dark-border);
+        }
+        .case-stat-number {
+            font-family: var(--serif);
+            font-size: 2.75rem;
+            line-height: 1.1;
+            color: var(--brand);
+            display: block;
+        }
+        .case-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted-light);
+            margin-top: 0.5rem;
+        }
+        .yoy-compare {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 3rem;
+            height: 280px;
+            margin-top: 1.5rem;
+            padding: 0 2rem;
+        }
+        .yoy-bar-group { text-align: center; }
+        .yoy-bar {
+            width: 100px;
+            border-radius: 8px 8px 0 0;
+            transition: height 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+            height: 0;
+        }
+        .yoy-bar.y2025 { background: var(--dark-border); border: 1px solid var(--dark-border); }
+        .yoy-bar.y2026 { background: linear-gradient(180deg, var(--brand), #D4412E); }
+        .yoy-bar-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted-light);
+            margin-top: 0.75rem;
+        }
+        .yoy-bar-number {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .yoy-change {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--brand-15);
+            color: var(--brand);
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 6px;
+        }
+        .chart-section { margin-bottom: 3rem; }
+        .chart-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-muted-light);
+            margin-bottom: 1.25rem;
+        }
+        @media (max-width: 768px) {
+            .case-hero-stats { grid-template-columns: 1fr; }
+        }
+
+        /* ============================
+           WHAT'S AHEAD
+           ============================ */
+        .ahead-grid {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .ahead-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--light-card);
+            border: 1px solid var(--border-light);
+        }
+        .ahead-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--brand-10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .ahead-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .ahead-desc {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        @media (max-width: 768px) {
+            .ahead-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================
+           QUOTE
+           ============================ */
+        .quote-block {
+            margin-top: 3.5rem;
+            padding: 2.5rem;
+            background: var(--dark-card);
+            border-radius: 14px;
+            border: 1px solid var(--dark-border);
+            position: relative;
+        }
+        .quote-block::before {
+            content: '\201C';
+            font-family: var(--serif);
+            font-size: 5rem;
+            line-height: 1;
+            color: var(--brand);
+            opacity: 0.15;
+            position: absolute;
+            top: 0.75rem;
+            left: 1.5rem;
+        }
+        .quote-block .quote-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+        }
+        .quote-block .quote-attr {
+            margin-top: 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-muted-light);
+        }
+        .quote-block .quote-attr strong {
+            color: var(--text-light);
+        }
+
+        /* ============================
+           FOOTER
+           ============================ */
+        .footer {
+            padding: 3rem 0;
+            background: var(--dark);
+            text-align: center;
+            color: var(--text-muted-light);
+            font-size: 0.8rem;
+        }
+        .footer a { color: var(--brand); text-decoration: none; }
+
+        /* ============================
+           ANIMATIONS
+           ============================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        @media print {
+            .nav { display: none; }
+            .section { padding: 2rem 0; }
+            .reveal { opacity: 1; transform: none; }
+            .hero { min-height: auto; padding: 3rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================== NAV ======================== -->
+    <nav class="nav">
+        <a href="#hero" class="nav-logo">SIXTH CITY MARKETING</a>
+    </nav>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero section" id="hero">
+        <div class="container">
+            <div class="hero-badge">A note from your SEO team</div>
+            <h1 class="hero-title">Surprise&mdash;Your SEO Package <em>Already Includes</em> AI Search.</h1>
+            <p class="hero-sub">You may have heard that AI-powered search engines like ChatGPT and Perplexity require a whole new optimization strategy. We want to show you why the work we're already doing is built for exactly this moment&mdash;and the results to prove it.</p>
+        </div>
+    </section>
+
+    <!-- ======================== HOW AI SEARCH WORKS ======================== -->
+    <section class="section light-section flow-section" id="how">
+        <div class="container">
+            <div class="section-label reveal">Here's what's happening behind the scenes</div>
+            <h2 class="section-title reveal">AI Answers Start with Search Engines</h2>
+            <p class="section-subtitle reveal">When AI platforms generate answers, they don't have their own database of websites. They query the same search engine indexes that your SEO strategy is built to rank in.</p>
+
+            <div class="flow-grid reveal">
+                <div class="flow-row">
+                    <div class="flow-node flow-platform">ChatGPT</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-api">Bing Search API</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-index">Ranked Results</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-answer">AI Answer</div>
+                </div>
+                <div class="flow-row">
+                    <div class="flow-node flow-platform">Perplexity</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-api">Google + Bing APIs</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-index">Ranked Results</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-answer">AI Answer</div>
+                </div>
+                <div class="flow-row">
+                    <div class="flow-node flow-platform">Google AI Overviews</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-api">Google's Own Index</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-index">Ranked Results</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-node flow-answer">AI Answer</div>
+                </div>
+            </div>
+
+            <div class="flow-callout reveal">When your pages rank in Google and Bing, they're automatically in the pool that AI systems draw from to generate answers. Your SEO strategy is already feeding AI visibility.</div>
+        </div>
+    </section>
+
+    <!-- ======================== THE NUMBERS ======================== -->
+    <section class="section dark-section" id="numbers">
+        <div class="container">
+            <div class="section-label reveal">Why this matters</div>
+            <h2 class="section-title reveal">The Numbers Behind AI Search</h2>
+            <p class="section-subtitle reveal">AI search is real and growing. But the path to visibility in it runs directly through the SEO work already in your strategy.</p>
+
+            <div class="stats-row">
+                <div class="stat-card reveal">
+                    <span class="stat-number">52%</span>
+                    <p class="stat-label">of AI Overview citations come from Google's top-10 organic results. Rankings drive AI visibility.</p>
+                </div>
+                <div class="stat-card reveal reveal-delay-1">
+                    <span class="stat-number">62%</span>
+                    <p class="stat-label">of brands on Google's first page appear in ChatGPT's answers. If you rank, AI finds you.</p>
+                </div>
+                <div class="stat-card reveal reveal-delay-2">
+                    <span class="stat-number">80%+</span>
+                    <p class="stat-label">of AI-driven traffic goes to pages updated within 2 years. Freshness matters&mdash;and we keep your content current.</p>
+                </div>
+            </div>
+
+            <div class="quote-block reveal">
+                <p class="quote-text">Microsoft&mdash;the company whose Bing API powers ChatGPT's search&mdash;says content needs to be "fresh, authoritative, structured, and semantically clear." That's the same checklist we use to build your pages.</p>
+                <div class="quote-attr"><strong>Microsoft Advertising</strong> &mdash; Official Content Optimization Guide</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== WHAT WE DO ======================== -->
+    <section class="section light-section" id="approach">
+        <div class="container">
+            <div class="section-label reveal">What we're doing for you</div>
+            <h2 class="section-title reveal">Your Strategy, Built for Both Channels</h2>
+            <p class="section-subtitle reveal">Every tactic in your SEO strategy serves double duty. Here's how each piece of the work we do feeds visibility in both traditional search and AI-powered search.</p>
+
+            <div class="pillars-section">
+
+                <div class="pillars-group-label reveal">The Foundation</div>
+                <div class="pillars-grid">
+                    <div class="pillar-card reveal">
+                        <div class="pillar-num">01</div>
+                        <div class="pillar-title">Search Rankings</div>
+                        <div class="pillar-accent">52% of AI citations come from top-10 results.</div>
+                        <div class="pillar-desc">Every page we optimize, every keyword we target, every ranking we earn puts your content into the pool AI systems draw from. Rankings aren't just for Google anymore.</div>
+                    </div>
+                    <div class="pillar-card reveal reveal-delay-1">
+                        <div class="pillar-num">02</div>
+                        <div class="pillar-title">Structured Content</div>
+                        <div class="pillar-desc">We build your pages with clear headings, self-contained sections, Q&amp;A blocks, and data tables. This structure makes content easy for both search engines and AI systems to read, understand, and cite.</div>
+                    </div>
+                    <div class="pillar-card reveal">
+                        <div class="pillar-num">03</div>
+                        <div class="pillar-title">Audience-First Research</div>
+                        <div class="pillar-desc">We map the real questions your audience is asking&mdash;in Google, in ChatGPT, in Perplexity. Every page we build answers a question someone is actually typing. That's what gets cited.</div>
+                    </div>
+                    <div class="pillar-card reveal reveal-delay-1">
+                        <div class="pillar-num">04</div>
+                        <div class="pillar-title">Your Expertise, On the Page</div>
+                        <div class="pillar-accent">62% of one client's traffic from expert content.</div>
+                        <div class="pillar-desc">The conversations we have with you&mdash;your knowledge, your perspective, your experience&mdash;become content that no competitor can replicate. AI systems prioritize this kind of first-person authority.</div>
+                    </div>
+                </div>
+
+                <div class="pillars-group-label reveal">Amplification</div>
+                <div class="pillars-grid">
+                    <div class="pillar-card reveal">
+                        <div class="pillar-num">05</div>
+                        <div class="pillar-title">PR &amp; Brand Mentions</div>
+                        <div class="pillar-desc">Link building, digital PR, and brand mentions don't just help Google rankings. AI systems monitor the same signals&mdash;mentions on news sites, Reddit, LinkedIn, and YouTube all feed LLM awareness of your brand.</div>
+                    </div>
+                    <div class="pillar-card reveal reveal-delay-1">
+                        <div class="pillar-num">06</div>
+                        <div class="pillar-title">Content Freshness</div>
+                        <div class="pillar-accent">80%+ of AI traffic goes to recently updated pages.</div>
+                        <div class="pillar-desc">We keep your content updated and current. AI systems strongly prefer fresh content&mdash;pages updated within the last two years receive the vast majority of AI-driven traffic.</div>
+                    </div>
+                </div>
+
+                <div class="pillars-group-label reveal">Intelligence</div>
+                <div class="pillars-grid">
+                    <div class="pillar-card reveal">
+                        <div class="pillar-num">07</div>
+                        <div class="pillar-title">AI Visibility Monitoring</div>
+                        <div class="pillar-desc">We track how AI platforms like ChatGPT, Perplexity, and Gemini represent your brand&mdash;identifying gaps and opportunities that feed directly back into your strategy.</div>
+                    </div>
+                    <div class="pillar-card reveal reveal-delay-1">
+                        <div class="pillar-num">08</div>
+                        <div class="pillar-title">Audience Channel Research</div>
+                        <div class="pillar-desc">We analyze where your audience actually spends time online&mdash;beyond just Google. Understanding these channels helps us build visibility across every platform that influences AI answers.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== RESULTS ======================== -->
+    <section class="section dark-section" id="results">
+        <div class="container">
+            <div class="section-label reveal">The proof</div>
+            <h2 class="section-title reveal">This Is Already Working</h2>
+            <p class="section-subtitle reveal">Here's what happened when we applied this approach for a holistic dentist in Indianapolis. We conducted a series of 30-minute conversations, asked what she tells patients, and turned that expertise into structured content.</p>
+
+            <div class="case-hero-stats">
+                <div class="case-stat reveal">
+                    <span class="case-stat-number">~300%</span>
+                    <span class="case-stat-label">Year-over-year click growth</span>
+                </div>
+                <div class="case-stat reveal reveal-delay-1">
+                    <span class="case-stat-number">62%</span>
+                    <span class="case-stat-label">of all site traffic from expert content</span>
+                </div>
+                <div class="case-stat reveal reveal-delay-2">
+                    <span class="case-stat-number">+24%</span>
+                    <span class="case-stat-label">Month-over-month and still growing</span>
+                </div>
+            </div>
+
+            <div class="chart-section reveal">
+                <div class="chart-label">Year-Over-Year Performance (Jan 20 &ndash; Feb 19)</div>
+                <div class="yoy-compare" id="yoyChart">
+                    <div class="yoy-bar-group">
+                        <div class="yoy-bar-number" style="color: var(--text-muted-light);">508</div>
+                        <div class="yoy-bar y2025" data-height="62"></div>
+                        <div class="yoy-bar-label">2025</div>
+                    </div>
+                    <div class="yoy-bar-group">
+                        <div class="yoy-bar-number" style="color: var(--brand); font-weight: 600;">2,028</div>
+                        <div class="yoy-bar y2026" data-height="248"></div>
+                        <div class="yoy-bar-label">2026</div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 0.5rem;">
+                    <span class="yoy-change">&uarr; ~300% YoY Growth</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 1.75rem 2rem; background: var(--brand-10); border-left: 3px solid var(--brand); border-radius: 0 8px 8px 0; font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--text-light);" class="reveal">
+                Across our client portfolio, we're seeing AI referral traffic from sources like ChatGPT and Perplexity&mdash;typically under 5% of total traffic, but with notably strong conversion rates. This traffic is arriving as a direct byproduct of the SEO work already in place.
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== WHAT'S AHEAD ======================== -->
+    <section class="section light-section" id="ahead">
+        <div class="container">
+            <div class="section-label reveal">Looking forward</div>
+            <h2 class="section-title reveal">As AI Search Evolves, So Does Our Approach</h2>
+            <p class="section-subtitle reveal">The foundation is in place. As the AI search landscape matures, we're adding new layers of intelligence to keep you ahead.</p>
+
+            <div class="ahead-grid">
+                <div class="ahead-card reveal">
+                    <div class="ahead-icon">&#128202;</div>
+                    <div class="ahead-title">AI Visibility Reporting</div>
+                    <div class="ahead-desc">Tracking how your brand appears across ChatGPT, Perplexity, Gemini, and Google AI Overviews&mdash;so you can see the full picture of your search presence.</div>
+                </div>
+                <div class="ahead-card reveal reveal-delay-1">
+                    <div class="ahead-icon">&#128206;</div>
+                    <div class="ahead-title">Citation Tracking</div>
+                    <div class="ahead-desc">Monitoring when and where AI platforms cite your content, and using those insights to identify what's working and where to expand.</div>
+                </div>
+                <div class="ahead-card reveal reveal-delay-2">
+                    <div class="ahead-icon">&#128270;</div>
+                    <div class="ahead-title">Query Fan-Out Analysis</div>
+                    <div class="ahead-desc">AI systems break prompts into dozens of sub-queries. We analyze these to uncover content opportunities that traditional keyword research can't see.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>Questions about your strategy? <a href="mailto:info@sixthcitymarketing.com">Reach out anytime</a>. We're here to help.</p>
+            <p style="margin-top: 0.5rem;">&copy; 2026 <a href="https://www.sixthcitymarketing.com/" target="_blank">Sixth City Marketing</a></p>
+        </div>
+    </footer>
+
+    <!-- ======================== SCRIPTS ======================== -->
+    <script>
+        // Intersection Observer for reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // YoY chart animation
+        const yoyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    entry.target.dataset.animated = 'true';
+                    entry.target.querySelectorAll('.yoy-bar').forEach(bar => {
+                        const h = bar.dataset.height;
+                        setTimeout(() => { bar.style.height = h + 'px'; }, 300);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const yoyChart = document.getElementById('yoyChart');
+        if (yoyChart) yoyObserver.observe(yoyChart);
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
