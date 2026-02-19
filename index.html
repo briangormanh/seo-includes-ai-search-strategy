@@ -633,8 +633,94 @@
             line-height: 1.6;
             color: var(--text-secondary);
         }
+        .dark-section .ahead-card {
+            background: var(--dark-card);
+            border-color: var(--dark-border);
+        }
+        .dark-section .ahead-title { color: var(--text-light); }
+        .dark-section .ahead-desc { color: var(--text-muted-light); }
         @media (max-width: 768px) {
             .ahead-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================
+           OVERLAP
+           ============================ */
+        .overlap-grid {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            background: var(--white);
+            border-radius: 14px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+        .overlap-row {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .overlap-row:last-child { border-bottom: none; }
+        .overlap-row.header {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-light);
+            background: var(--light-card);
+        }
+        .overlap-ai { color: var(--text-primary); font-weight: 500; }
+        .overlap-check { text-align: center; }
+        .overlap-check .check {
+            display: inline-flex;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(236, 78, 54, 0.12);
+            align-items: center;
+            justify-content: center;
+        }
+        .overlap-check .check svg { width: 14px; height: 14px; }
+        .overlap-seo { color: var(--text-secondary); font-size: 0.9rem; }
+        .overlap-divider {
+            padding: 0.75rem 1.5rem 0.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brand);
+            opacity: 0.7;
+            background: var(--light-card);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .overlap-row.evolution .overlap-ai { color: var(--brand); }
+        .overlap-row.evolution .overlap-check .check {
+            background: rgba(236, 78, 54, 0.2);
+        }
+        .overlap-note {
+            padding: 1rem 1.5rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            background: var(--light-card);
+        }
+        .overlap-callout {
+            margin-top: 3rem;
+            text-align: center;
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        .overlap-callout em { color: var(--brand); font-style: italic; }
+        @media (max-width: 768px) {
+            .overlap-row { grid-template-columns: 1fr 50px 1fr; padding: 0.75rem 0.75rem; }
+            .overlap-ai, .overlap-seo { font-size: 0.8rem; }
         }
 
         /* ============================
@@ -725,7 +811,7 @@
                 <div class="hero-text">
                     <div class="hero-badge">A note from your SEO team</div>
                     <h1 class="hero-title">Surprise&mdash;Your SEO Package <em>Already Includes</em> AI Search.</h1>
-                    <p class="hero-sub">You may have heard that AI-powered search engines like ChatGPT and Perplexity require a whole new optimization strategy. We want to show you why the work we're already doing is built for exactly this moment&mdash;and the results to prove it.</p>
+                    <p class="hero-sub">You may have heard that AI-powered search engines like ChatGPT and Perplexity require a whole new optimization strategy. We've been monitoring this space since 2023&mdash;and we want to show you why the work we're already doing is built for exactly this moment.</p>
                 </div>
                 <div class="hero-visual">
                     <div class="hv-flow">
@@ -939,8 +1025,86 @@
         </div>
     </section>
 
+    <!-- ======================== THE OVERLAP ======================== -->
+    <section class="section light-section" id="overlap">
+        <div class="container">
+            <div class="section-label reveal">The full picture</div>
+            <h2 class="section-title reveal">AI Search Strategies,<br>Already in Your SEO</h2>
+            <p class="section-subtitle reveal">When you look at what experts recommend for AI search visibility, the vast majority maps directly to the SEO work already in your strategy.</p>
+
+            <div class="overlap-grid reveal">
+                <div class="overlap-row header">
+                    <div>AI Search Recommendation</div>
+                    <div style="text-align: center;"></div>
+                    <div>Your SEO Strategy</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Structured data &amp; schema markup</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">Technical SEO</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Heading optimization &amp; hierarchy</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">On-Page SEO</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Content quality, depth &amp; authority</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">Content Strategy</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Technical crawlability &amp; accessibility</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">Technical SEO</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Topical coverage &amp; content hubs</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">Content Architecture</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Internal linking structure</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">On-Page SEO</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Brand mentions &amp; digital PR</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">Link Building &amp; PR</div>
+                </div>
+                <div class="overlap-row">
+                    <div class="overlap-ai">Multi-platform presence</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo">Social &amp; PR Strategy</div>
+                </div>
+
+                <div class="overlap-divider">What's genuinely new</div>
+
+                <div class="overlap-row evolution">
+                    <div class="overlap-ai">AI visibility monitoring</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo" style="color: var(--brand);">Evolution of Reporting</div>
+                </div>
+                <div class="overlap-row evolution">
+                    <div class="overlap-ai">Citation &amp; mention tracking</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo" style="color: var(--brand);">Evolution of Measurement</div>
+                </div>
+                <div class="overlap-row evolution">
+                    <div class="overlap-ai">Query fan-out analysis</div>
+                    <div class="overlap-check"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#EC4E36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                    <div class="overlap-seo" style="color: var(--brand);">Evolution of Keyword Research</div>
+                </div>
+                <div class="overlap-note">These matter&mdash;but only after the fundamentals above are in place. Most businesses see far more impact from thorough SEO execution than from advanced AI-specific tactics.</div>
+            </div>
+
+            <div class="overlap-callout reveal">~80% of AI search optimization is thorough SEO.<br>The rest is natural <em>evolution</em>, not a whole new playbook.</div>
+        </div>
+    </section>
+
     <!-- ======================== WHAT'S AHEAD ======================== -->
-    <section class="section light-section" id="ahead">
+    <section class="section dark-section" id="ahead">
         <div class="container">
             <div class="section-label reveal">Looking forward</div>
             <h2 class="section-title reveal">As AI Search Evolves, So Does Our Approach</h2>
